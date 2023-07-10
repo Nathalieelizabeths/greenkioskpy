@@ -1,4 +1,7 @@
 from django.db import models
+from cart.models import Cart
+from delivery.models import Delivery
+from customer.models import Customer
 
 # Create your models here.
 class Order(models.Model):
@@ -13,3 +16,7 @@ class Order(models.Model):
         ('Delivered', 'Delivered'),
         ('Canceled', 'Canceled'),
     ])
+
+    cart = models.ForeignKey(Cart, null=True, on_delete=models.CASCADE)
+    customer = models.ForeignKey(Customer,null=True, on_delete=models.CASCADE)
+    delivery = models.OneToOneField(Delivery,null=True,on_delete=models.CASCADE)
