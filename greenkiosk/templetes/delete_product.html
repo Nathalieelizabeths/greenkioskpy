@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+        }
+    
+        h1 {
+          color: #333;
+        }
+    
+        p {
+          margin-bottom: 10px;
+        }
+    
+        form {
+          margin-top: 20px;
+        }
+    
+        input[type="submit"] {
+          background-color: #f44336;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+        }
+    
+        input[type="submit"]:hover {
+          background-color: #d32f2f;
+        }
+      </style>
+    
+    <h1>Delete Product</h1>
+
+<p>Are you sure you want to delete the following product?</p>
+
+<p>Product Name: {{ product.name }}</p>
+<p>Product ID: {{ product.id }}</p>
+<!-- Add more product details as needed -->
+
+<form method="post" action="{% url 'delete_product' product.id %}">
+  {% csrf_token %}
+  <input type="submit" value="Delete">
+</form>
+
+</body>
+</html>

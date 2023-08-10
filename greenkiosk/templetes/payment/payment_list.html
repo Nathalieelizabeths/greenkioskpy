@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment List</title>
+</head>
+<body>
+    <h1>Payment List</h1>
+    
+    <table>
+        <tr>
+            <th>Payment Method</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Description</th>
+        </tr>
+        {% for payment in payments %}
+        <tr>
+            <td>{{ payment.get_payment_method_display }}</td>
+            <td>{{ payment.amount }}</td>
+            <td>{{ payment.date }}</td>
+            <td>{{ payment.get_status_display }}</td>
+            <td>{{ payment.description }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <br><br>
+    <a href="{% url 'make_payment' %}">Make Another Payment</a>
+</body>
+</html>
