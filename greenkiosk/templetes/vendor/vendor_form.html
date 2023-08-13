@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Vendor</title>
+    <!-- Include your CSS and other head content here -->
+</head>
+<body>
+  <h1>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Vendor</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% if form.instance.pk %}Save Changes{% else %}Create Vendor{% endif %}</button>
+  </form>
+  <a href="{% url 'vendor:vendor_list' %}">Back to Vendor List</a>
+</body>
+</html>

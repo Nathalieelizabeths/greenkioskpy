@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vendor Detail</title>
+    <!-- Include your CSS and other head content here -->
+</head>
+<body>
+  <h1>Vendor Detail</h1>
+  <p>Name: {{ vendor.name }}</p>
+  <p>Email: {{ vendor.email }}</p>
+  <a href="{% url 'vendor:vendor_edit' vendor.pk %}">Edit Vendor</a>
+  <a href="{% url 'vendor:vendor_delete' vendor.pk %}">Delete Vendor</a>
+  <a href="{% url 'vendor:vendor_list' %}">Back to Vendor List</a>
+</body>
+</html>

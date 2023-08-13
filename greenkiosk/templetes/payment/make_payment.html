@@ -1,31 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make Payment</title>
 </head>
 <body>
-    <h1>Make a Payment</h1>
-    
-    <form method="post">
+    <h1>Make Payment</h1>
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <form method="POST" action="{% url 'make_payment' %}">
         {% csrf_token %}
         <label for="payment_method">Payment Method:</label>
-        <select name="payment_method" id="payment_method">
-            <option value="NB">Lipa na Mpesa</option>
-            <option value="PP">Cash</option>
-        </select><br><br>
-        
+        <input type="text" name="payment_method" required><br><br>
         <label for="amount">Amount:</label>
         <input type="number" name="amount" required><br><br>
-        
         <label for="description">Description:</label>
-        <textarea name="description" rows="4" required></textarea><br><br>
-        
+        <textarea name="description" required></textarea><br><br>
         <button type="submit">Submit Payment</button>
     </form>
-    
-    <br><br>
-    <a href="{% url 'payment_list' %}">View Payment List</a>
 </body>
 </html>

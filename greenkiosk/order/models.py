@@ -11,3 +11,4 @@ class Order(models.Model):
         ('delivered', 'Delivered'),
         ('canceled', 'CanceLled'),
     ])
+    

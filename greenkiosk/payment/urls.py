@@ -1,7 +1,10 @@
 from django.urls import path
-from . import views
+from .views import make_payment, payment_list
+
+
+# urls.py
 
 urlpatterns = [
-    path('make_payment/', views.make_payment, name='make_payment'),
-    path('payment_list/', views.payment_list, name='payment_list'),
+    path('payment/make/', make_payment, name='make_payment'),
+    path('payment/list/', payment_list, name='payment_list'),
 ]

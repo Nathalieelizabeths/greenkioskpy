@@ -7,7 +7,7 @@ def make_payment(request):
     if request.method == 'POST':
         payment_method = request.POST['payment_method']
         amount = request.POST['amount']
-        status = 'P'  # Assuming payment status starts as 'Pending'
+        status = 'P'  
         description = request.POST['description']
 
         payment = Payment(payment_method=payment_method, amount=amount, status=status, description=description)
