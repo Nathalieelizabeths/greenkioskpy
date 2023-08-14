@@ -14,12 +14,16 @@
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .product-name {
             font-size: 24px;
             margin-bottom: 10px;
             color: #333;
+            text-align: center;
         }
 
         .product-details {
@@ -31,6 +35,7 @@
         .product-image {
             flex: 1;
             margin-right: 20px;
+            text-align: center;
         }
 
         .product-image img {
@@ -57,19 +62,33 @@
             color: #ff6600;
             display: block;
             margin-bottom: 20px;
+            text-align: center;
         }
 
+        .delete-product,
         .add-to-cart {
+            display: block;
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #ff6600;
+            text-align: center;
             color: #fff;
-            border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            text-decoration: none;
+            margin: 10px auto;
+            width: 150px;
         }
 
+        .delete-product {
+            background-color: #ff0000;
+        }
+
+        .add-to-cart {
+            background-color: #00A988;
+        }
+
+        .delete-product:hover,
         .add-to-cart:hover {
             background-color: #e65c00;
         }
@@ -87,7 +106,6 @@
                 <span class="product-price">{{product.price}}</span>
                 <a href="{% url 'delete_product' product.id %}" class="delete-product">Delete Product</a>
                 <a href="{% url 'view_cart' %}" class="add-to-cart">Add To Cart</a>
-
             </div>
         </div>
     </div>

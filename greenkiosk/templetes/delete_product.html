@@ -43,7 +43,6 @@
 
 <p>Product Name: {{ product.name }}</p>
 <p>Product ID: {{ product.id }}</p>
-<!-- Add more product details as needed -->
 
 <form method="post" action="{% url 'delete_product' product.id %}">
   {% csrf_token %}

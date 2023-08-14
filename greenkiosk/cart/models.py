@@ -24,3 +24,4 @@ class Cart(models.Model):
         cart_item_id = request.GET.get('cart_item_id')
         CartItem.objects.filter(cart__user=request.user.id,id=cart_item_id)
         return render(request, your_template)
+    
