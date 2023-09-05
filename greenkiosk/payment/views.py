@@ -20,4 +20,4 @@ def make_payment(request):
 
 def payment_list(request):
     payments = Payment.objects.all()
-    return render(request, 'payment_list.html', {'payments': payments})
+    return render(request, 'payment/payment_list.html', {'payment': payments})

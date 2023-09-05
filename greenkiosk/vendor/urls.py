@@ -5,8 +5,8 @@ app_name = 'vendor'
 
 urlpatterns = [
     path('vendors/list/', views.vendor_list, name='vendor_list'),
-    path('vendors/<int:pk>/', views.vendor_detail, name='vendor_detail'),
+    path('vendors/<int:id>/', views.vendor_detail, name='vendor_detail'),
     path('vendors/create/', views.vendor_create, name='vendor_create'),
-    path('vendors/<int:pk>/edit/', views.vendor_edit, name='vendor_edit'),
-    path('vendors/<int:pk>/delete/', views.vendor_delete, name='vendor_delete'),
+    path('vendors/<int:id>/edit/', views.vendor_edit, name='vendor_edit'),
+    path('vendors/<int:id>/delete/', views.vendor_delete, name='vendor_delete'),
 ]

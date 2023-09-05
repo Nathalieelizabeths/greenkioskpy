@@ -68,8 +68,8 @@
     <p>Name: {{ vendor.name }}</p>
     <p>Email: {{ vendor.email }}</p>
   </div>
-  <a class="edit-link" href="{% url 'vendor:vendor_edit' vendor.pk %}">Edit Vendor</a>
-  <a class="delete-link" href="{% url 'vendor:vendor_delete' vendor.pk %}">Delete Vendor</a>
+  <a class="edit-link" href="{% url 'vendor:vendor_edit' vendor.id %}">Edit Vendor</a>
+  <a class="delete-link" href="{% url 'vendor:vendor_delete' vendor.id %}">Delete Vendor</a>
   <a class="back-link" href="{% url 'vendor:vendor_list' %}">Back to Vendor List</a>
 </body>
 </html>

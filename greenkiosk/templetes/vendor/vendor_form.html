@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Vendor</title>
+    <title>{% if form.instance.id %}Edit{% else %}Create{% endif %} Vendor</title>
     <style>
        
         body {
@@ -60,7 +60,7 @@
     </style>
 </head>
 <body>
-  <h1>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Vendor</h1>
+  <h1>{% if form.instance.id %}Edit{% else %}Create{% endif %} Vendor</h1>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}

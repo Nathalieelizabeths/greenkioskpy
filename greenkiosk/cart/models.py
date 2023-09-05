@@ -20,6 +20,7 @@ class Cart(models.Model):
         product_cart = Product.objects.get(id=product_id)
         Cart(user=user, product=product_cart).save()
         return render(request, 'cart/addtocart.html')
+    
     def delete_cart_item(request):
         cart_item_id = request.GET.get('cart_item_id')
         CartItem.objects.filter(cart__user=request.user.id,id=cart_item_id)

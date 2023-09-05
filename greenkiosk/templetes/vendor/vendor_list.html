@@ -104,8 +104,8 @@
             <p>Address:{{vendor.address}}</p>
             <p>Email: {{ vendor.email }}</p>
             <div class="buttons">
-                <a href="{% url 'vendor:vendor_edit' pk=vendor.pk %}" class="edit">Edit Details</a>
-                <a href="{% url 'vendor:vendor_detail' pk=vendor.pk %}" class="view-button">View Details</a>
+                <a href="{% url 'vendor:vendor_edit' id=vendor.id %}" class="edit">Edit Details</a>
+                <a href="{% url 'vendor:vendor_detail' id=vendor.id %}" class="view-button">View Details</a>
             </div>
         </div>
         {% endfor %}
