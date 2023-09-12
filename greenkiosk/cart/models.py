@@ -14,15 +14,14 @@ class Cart(models.Model):
     products=models.ManyToManyField(Product)
     # One-to-one relationship with Order model
     # order = Order.objects.create(customer_id=1)
-    def addProduct(request):
-        user = request.user
-        product_id = request.GET.get('product_id')
-        product_cart = Product.objects.get(id=product_id)
-        Cart(user=user, product=product_cart).save()
-        return render(request, 'cart/addtocart.html')
-    
-    def delete_cart_item(request):
-        cart_item_id = request.GET.get('cart_item_id')
-        CartItem.objects.filter(cart__user=request.user.id,id=cart_item_id)
-        return render(request, your_template)
-    
+    def add_product(self,product):
+        self.products.add(product)
+        self.save()
+        return self
+    def get_total(self):
+        products = self.products.all()
+        total = 0
+        for product in products:
+            total+=product.price
+        return total
+
